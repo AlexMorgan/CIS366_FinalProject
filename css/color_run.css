@@ -1,0 +1,84 @@
+@font-face{
+  font-family: 'CaviarDreams';
+  src: url('../fonts/CaviarDreams.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face{
+  font-family: 'Ostrich';
+  src: url('../fonts/ostrich-regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+body {
+  font-family:'Ostrich', Arial, sans-serif;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  width: 70%;
+}
+
+ul {
+  display: inline;
+  padding-left: 30%;
+}
+
+li:last-child {
+  margin-right: 0 !important;
+}
+
+li {
+  text-decoration: none;
+  display: inline;
+  margin-right: 10%;
+  font-size: 2em;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #F62459;
+}
+
+.title {
+  text-align: center;
+  font-size: 3.5em;
+  letter-spacing: 0;
+  word-spacing: -4;
+  display: inline;
+  color: #9b59b6;
+}
+
+.banner {
+  width: 100%;
+}
+
+.intro p {
+  text-align: justify;
+  font-size: 1.5em;
+  margin-top: 5%;
+}
+
+.small {
+  width: 275px;
+  height: 183px;
+}
+
+.topics {
+  margin-top: 5%;
+}
+
+.topics img {
+  margin-right: 8%;
+}
+
+.topics img:last-child {
+  margin-right: 0;
+}
