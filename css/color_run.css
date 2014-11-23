@@ -14,33 +14,51 @@
 
 
 body {
-  font-family:'Ostrich', Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  margin: 8px 0 0 0;
 }
 
 .container {
   position: relative;
   margin: 0 auto;
-  width: 70%;
+  width: 75%;
+}
+
+.navbar {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.navbar a {
+  font-family:'Ostrich', Arial, sans-serif;
+}
+
+.logo {
+  width: 100px;
 }
 
 ul {
   display: inline;
-  padding-left: 30%;
+  float: right;
 }
 
 li:last-child {
   margin-right: 0 !important;
+  padding-right: 0;
 }
 
 li {
   text-decoration: none;
   display: inline;
   margin-right: 10%;
+  padding-right: 30px;
   font-size: 2em;
 }
 
 a {
   text-decoration: none;
+  color: #9b59b6;
 }
 
 a:hover {
@@ -49,11 +67,10 @@ a:hover {
 
 .title {
   text-align: center;
-  font-size: 3.5em;
-  letter-spacing: 0;
-  word-spacing: -4;
-  display: inline;
+  font-size: 3em;
   color: #9b59b6;
+  margin: 0;
+  font-weight: 300;
 }
 
 .banner {
@@ -64,6 +81,8 @@ a:hover {
   text-align: justify;
   font-size: 1.5em;
   margin-top: 5%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
 }
 
 .small {
@@ -75,10 +94,38 @@ a:hover {
   margin-top: 5%;
 }
 
-.topics img {
-  margin-right: 8%;
+.topics div {
+  display: inline-block;
+  width: 275px;
+  margin-right: 11%;
+  font-weight: 200;
 }
 
-.topics img:last-child {
+.topics div:last-child {
   margin-right: 0;
+}
+
+.clock {
+  display: inline;
+  position: relative;
+  left: 21%;
+}
+
+#map-canvas {
+  width: 500px;
+  height: 300px;
+}
+
+footer {
+  background: #16e0d8;
+  position: relative;
+  height: 150px;
+  clear:both;
+  padding-top: 75px;
+  margin-top: 25px;
+}
+
+.ftr-name {
+  color: #fff;
+  font-weight: 300;
 }
