@@ -5,7 +5,7 @@
 </head>
 <body>
   <section class="navbar">
-  <section class="navigation">
+  <section class="nav">
     <!-- <h1 class="title">The Color Run</h1> -->
     <img class="logo" src="images/logo.png">
     <ul>
@@ -15,5 +15,29 @@
     </ul>
   </section>
   </section>
+
+  <footer>
+    <section class="container">
+      <h1 class="ftr-name">The Color Run</h1>
+      <div class="ftr-icons">
+        <a href="https://twitter.com/" target="_blank"><img src="images/twitter.png"></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png"></a>
+        <a href="https://www.youtube.com/watch?v=4EERSfHiqT8" target="_blank"><img src="images/youtube.png"></a>
+        <a href="http://instagram.com/thecolorrun/" target="_blank"><img src="images/instagram.png"></a>
+      </div>
+      <div>
+        <cite>Azar &amp; Morgan &copy; - Last Modified: <span id="lastModified"></span></cite>
+      </div>
+    </section>
+  </footer>
+  <script type="text/javascript">
+    var x = new Date(document.lastModified);
+    var month = x.getMonth();
+    var year = x.getFullYear();
+    var date = x.getDate();
+    var dateFormat = month + "/" + date + "/" + year;
+
+    document.getElementById("lastModified").innerHTML = dateFormat;
+  </script>
 </body>
 </html>

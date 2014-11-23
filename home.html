@@ -33,7 +33,7 @@
     </section>
 
     <section class="countdown">
-      <h1 class="title">Next Run: December 13th:</h1>
+      <h1 class="title">Next Run: <span class="thin">December 13th:</span></h1>
 
       <div class="clock"></div>
 
@@ -84,7 +84,7 @@
             {
               featureType: 'water',
               stylers: [
-                { color: '#16e0d8' }
+                { color: '#3498db' }
               ]
             },
             {
@@ -92,6 +92,12 @@
               elementType: "labels",
               stylers: [
                 { visibility: "on" },
+              ]
+            },
+            {
+              featureType: "poi.business",
+              stylers: [
+                { color: '#8e44ad'}
               ]
             }
           ];
@@ -130,6 +136,7 @@
     </section>
 
   </section>
+
   <footer>
     <section class="container">
       <h1 class="ftr-name">The Color Run</h1>
@@ -151,6 +158,7 @@
     var date = x.getDate();
     var dateFormat = month + "/" + date + "/" + year;
 
-    document.getElementById("lastModified").innerHTML = dateFormat;</script>
+    document.getElementById("lastModified").innerHTML = dateFormat;
+  </script>
 </body>
 </html>
