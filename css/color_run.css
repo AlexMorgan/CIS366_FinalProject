@@ -38,12 +38,12 @@ body {
   width: 100px;
 }
 
-ul {
+.nav ul {
   display: inline;
   float: right;
 }
 
-li:last-child {
+.nav li:last-child {
   margin-right: 0 !important;
   padding-right: 0;
 }
@@ -71,6 +71,7 @@ a:hover {
   color: #9b59b6;
   margin: 0;
   font-weight: 300;
+  margin-bottom: 25px;
 }
 
 .banner {
@@ -106,26 +107,40 @@ a:hover {
 }
 
 .clock {
-  display: inline;
-  position: relative;
-  left: 21%;
+  margin-left: 21% !important;
+  display: inline-block;
 }
 
 #map-canvas {
   width: 500px;
   height: 300px;
+  margin: 25px auto;
 }
 
 footer {
   background: #16e0d8;
   position: relative;
-  height: 150px;
+  height: 120px;
   clear:both;
-  padding-top: 75px;
+  padding-top: 85px;
   margin-top: 25px;
 }
 
 .ftr-name {
   color: #fff;
   font-weight: 300;
+  display: inline;
+}
+
+.ftr-icons {
+  float: right;
+}
+
+.ftr-icons img {
+  margin-right: 20px;
+}
+
+cite {
+  color: white;
+  font-weight: 100;
 }
