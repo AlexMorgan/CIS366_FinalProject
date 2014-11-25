@@ -18,6 +18,10 @@ body {
   margin: 8px 0 0 0;
 }
 
+.pink {
+  color: #eb008b !important;
+}
+
 .container {
   position: relative;
   margin: 0 auto;
@@ -115,7 +119,10 @@ a:hover {
 #map-canvas {
   width: 500px;
   height: 300px;
-  margin: 25px auto;
+  margin: 25px 0 50px 0;
+  float: right;
+  border: solid 3px #8e44ad;
+  box-shadow: 0px 10px 25px #888888;
 }
 
 footer {
@@ -147,5 +154,70 @@ cite {
 }
 
 .thin {
+  font-weight: 100 !important;
+}
+
+.location div {
+  display: inline-block;
+}
+
+.sm-title {
+  font-size: 2em;
+  color: #9b59b6;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+/*********************** Order Form ***********************/
+
+.tkt-type {
+  height: 35px;
+  width: 30%;
+  font-size: 1.25em;
   font-weight: 100;
+}
+
+.info-input {
+  height: 35px;
+  width: 30%;
+  font-size: 1.25em;
+  font-weight: 300 !important;
+}
+
+form input {
+  margin-bottom: 15px;
+}
+
+form {
+  text-align: center;
+}
+
+.registration {
+  margin: 50px 0;
+}
+
+#submit {
+  padding: 7px 30px !important;
+  font-size: 18px !important;
+  background-color: #F5D76E;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-bottom: 4px solid #F4D03F;
+  cursor: pointer;
+  border-radius: 2px;
+  font-weight: 100;
+}
+
+#submit:hover {
+  border-bottom: none;
+  margin-top: 4px;
+}
+
+label {
+  font-weight: 100;
+}
+
+.fine {
+  font-size: .75em;
 }

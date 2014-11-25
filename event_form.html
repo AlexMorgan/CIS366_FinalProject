@@ -2,12 +2,50 @@
 <head>
   <title>Register Online!</title>
   <link rel="stylesheet" type="text/css" href="css/color_run.css">
+  <script type="text/javascript">
+    function addAltEmail() {
+      if (document.orderForm.addEmail.checked == true) {
+        document.orderForm.altEmail.hidden = false;
+        document.getElementById('addEmailText').innerHTML = "Remove additional email";
+      } else {
+        document.orderForm.altEmail.value = null;
+        document.orderForm.altEmail.hidden = true;
+        document.getElementById('addEmailText').innerHTML = "Add multiple emails";
+      }
+    }
+
+    function getTotal(form) {
+      var totalCost, prices, ticketArr, ticketTypes;
+
+      totalCost = 0;
+      prices = [25, 50, 35];
+      ticketTypes = ['juniorTkt', 'adultTkt', 'seniorTkt'];
+
+      for (i = 0; i < ticketTypes.length; i++) {
+        var tktQuantity = document.getElementById(ticketTypes[i]).value
+
+        // Handle improper input
+        if (tktQuantity == undefined || tktQuantity < 0) {
+          tktQuantity = 0;
+        }
+
+        totalCost += tktQuantity * prices[i];
+      };
+
+      // Calculate discounted price for team runs
+      if (document.getElementById('team').checked == true) {
+        totalCost = totalCost * .9;
+      }
+
+      document.getElementById('orderTotal').value = totalCost;
+    }
+  </script>
 </head>
 <body>
   <section class="navbar">
   <section class="nav">
     <!-- <h1 class="title">The Color Run</h1> -->
-    <img class="logo" src="images/logo.png">
+    <a href="home.html"><img class="logo" src="images/logo.png"></a>
     <ul>
       <li><a href="home.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -15,21 +53,77 @@
     </ul>
   </section>
   </section>
+  <section class="container">
+    <section class="registration">
+      <h1 class="title">Register for your next Color Run:</h1>
+      <form id="orderForm" name="orderForm" method="post" action="event_confirmation.php">
+        <div>
+          <input type="text" class="info-input" name="firstName" id="firstName" placeholder="Enter First Name*" required>
+          <input type="text" class="info-input" name "lastName" id="lastName" placeholder="Enter Last Name*" required>
+        </div>
+
+        <div>
+          <input type="email" class="info-input" name="email" id="email" placeholder="Enter Email*" required>
+          <input type="email" class="info-input" name="altEmail" id="altEmail" placeholder="Enter Additional Email" hidden="hidden">
+          <input type="checkbox" id="addEmail" name="addEmail" onclick="addAltEmail();">
+          <label><span id="addEmailText">Add multiple emails</span></label>
+        </div>
+
+        <div>
+          <input type="number" class="tkt-type" name="junior" id="juniorTkt" placeholder="Enter Quantity" min="0">
+          <label>Junior Tickets - $25</label>
+        </div>
+
+        <div>
+          <input type="number" class="tkt-type" name="adult" id="adultTkt" placeholder="Enter Quantity" min="0">
+          <label>Adult Tickets - $50</label>
+        </div>
+
+        <div>
+          <input type="number" class="tkt-type" name="senior" id="seniorTkt" placeholder="Enter Quantity" min="0">
+          <label>Senior Tickets - $35</label>
+        </div>
+
+        <input type="text" class="tkt-type" name="orderTotal" id="orderTotal" hidden="hidden">
+
+        <div>
+          <input list="locations" placeholder="Choose Location" class="info-input">
+
+          <datalist id="locations">
+            <option value="Harrisonburg, Virginia">
+            <option value="New York, New York">
+            <option value="Boston, Massachusetts">
+            <option value="San Francisco, California">
+          </datalist>
+        </div>
+
+        <div>
+          <input type="radio" name="run-type" value="solo" id="solo">
+          <label>Solo Run</label>
+          <input type="radio" name="run-type" id="team" value="team">
+          <label>Team Run <span class="fine">(10% Discount)</span></label>
+        </div>
+
+        <input type="button" value="Submit" id="submit" name="submit" onclick="getTotal();">
+      </form>
+    </section>
+  </section>
 
   <footer>
     <section class="container">
-      <h1 class="ftr-name">The Color Run</h1>
-      <div class="ftr-icons">
-        <a href="https://twitter.com/" target="_blank"><img src="images/twitter.png"></a>
-        <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png"></a>
-        <a href="https://www.youtube.com/watch?v=4EERSfHiqT8" target="_blank"><img src="images/youtube.png"></a>
-        <a href="http://instagram.com/thecolorrun/" target="_blank"><img src="images/instagram.png"></a>
-      </div>
-      <div>
-        <cite>Azar &amp; Morgan &copy; - Last Modified: <span id="lastModified"></span></cite>
-      </div>
+    <h1 class="ftr-name">The Color Run</h1>
+    <div class="ftr-icons">
+      <a href="https://twitter.com/TheColorRun" target="_blank"><img src="images/twitter.png"></a>
+      <a href="https://www.facebook.com/thecolorrun" target="_blank"><img src="images/facebook.png"></a>
+      <a href="https://www.youtube.com/user/thecolorrun" target="_blank"><img src="images/youtube.png"></a>
+      <a href="http://instagram.com/thecolorrun/" target="_blank"><img src="images/instagram.png"></a>
+    </div>
+    <div>
+      <cite>Azar &amp; Morgan &copy; - Last Modified: <span id="lastModified"></span></cite>
+    </div>
     </section>
   </footer>
+
   <script type="text/javascript">
     var x = new Date(document.lastModified);
     var month = x.getMonth();
